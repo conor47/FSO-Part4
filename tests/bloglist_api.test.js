@@ -85,7 +85,7 @@ describe ('adding a blog', () => {
     })
 })
 
-describe ('adding a blog with no likes field', () => {
+describe ('adding invalid blogs', () => {
 
     test('adding blog with no likes field', async () => {
 
@@ -105,6 +105,34 @@ describe ('adding a blog with no likes field', () => {
             const blog = response.body.find( b => b.title === newBlog.title)
     
             expect(blog.likes).toBe(0)
+    })
+
+    test('adding blog with no title', async () => {
+
+        const newBlog = {
+            author : "test author",
+            url : 'test url',
+            likes : 100
+        }
+
+        await api
+        .post('/api/blogs')
+        .send(newBlog)
+        .expect(400)
+    })
+
+    test('adding blog with no url', async () => {
+
+        const newBlog = {
+            title : 'test title',
+            author : "test author",
+            likes : 100
+        }
+
+        await api
+        .post('/api/blogs')
+        .send(newBlog)
+        .expect(400)
     })
 })
 

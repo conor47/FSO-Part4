@@ -1,10 +1,2 @@
-POST http://localhost:3003/api/blogs
-Content-Type: application/json
+DELETE http://localhost:3003/api/blogs/608e0bcc71753462381eac82
 Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImJvYmJ5IiwiaWQiOiI2MDhlMDViOTM5YTVlYjYwYzYyMzA2OTkiLCJpYXQiOjE2MTk5MjA0Njh9.jTTC0qpr8VqZ9tBcXjeSagCYw3Ium_TWDpckV6Wo_IE
-
-{
-    "title" : "authorised blog",
-    "author":"bobby",
-    "user" : "608e05b939a5eb60c6230699",
-    "url" : "test url"
-}
