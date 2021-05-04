@@ -32,7 +32,7 @@ blogsRouter.post('/', async (request, response, next) => {
     response.json(savedBlog)
 })
 
-blogsRouter.delete('/:id', async (request, response, next) => {
+blogsRouter.delete('/:id', async (request, response) => {
 
     const decodedToken = jwt.verify(request.token, config.SECRET)
     if(!request.token || !decodedToken.id){
@@ -55,7 +55,7 @@ blogsRouter.delete('/:id', async (request, response, next) => {
     }
 })
 
-blogsRouter.put('/:id', async (request, response, next) => {
+blogsRouter.put('/:id', async (request, response) => {
   
   const body = request.body
   const newBlog = {
